@@ -2792,7 +2792,18 @@ function! s:YRInsertLeave()
             let s:yr_prev_reg_insert = @.
         endif
     endif
+endfunction
 
+" Edits to provide a Yanks command using for using fzf on Yankring
+function! YRGetYanksList()
+    call s:YRHistoryRead()
+    let disp_item_nr = 1
+    let output = []
+    for elem in s:yr_history_list
+        call add(output, s:YRDisplayElem(disp_item_nr, elem))
+        let disp_item_nr   += 1
+    endfor
+    return output
 endfunction
 
 " Deleting autocommands first is a good idea especially if we want to reload

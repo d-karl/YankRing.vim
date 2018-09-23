@@ -1,5 +1,8 @@
-This is a mirror of http://www.vim.org/scripts/script.php?script_id=1234
+This is a fork of http://www.vim.org/scripts/script.php?script_id=1234
 
+I have added the ability to search through the yanked buffers by using FZF. For this to work, my forked version of fzf-vim is neccessary.
+
+Original description follows:
 Vim already maintains a list of numbered registers containing the last 9 deletes.  These previous deletes can be referenced using [register]p, so "1p will paste the last delete, "2p the 2nd last delete.  For more information see |quote_number|.
 
 Vim does not provide any mechanism to reference previous yanked, deleted or changed text.  In Emacs this feature is called the "kill ring".
